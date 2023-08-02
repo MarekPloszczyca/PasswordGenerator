@@ -1,12 +1,12 @@
 const slider = document.querySelector("input");
-const number = document.getElementById("number");
+const number = document.querySelector(".number");
 const optionInput = document.querySelectorAll("input[type=checkbox]");
 const difficultySquares = Array.from(
-  document.getElementsByClassName("difficulty")
+  document.querySelectorAll(".difficulty")
 );
-const generator = document.getElementById("confirmation");
-const generatedPassword = document.getElementById("pass");
-const copyPassword = document.getElementById("icon");
+const generator = document.querySelector(".confirmation");
+const generatedPassword = document.querySelector(".password");
+const copyPassword = document.querySelector(".icon");
 
 const alphabet = "qwertyuiopasdfghjklzxcvbnm";
 const numbers = "0123456789";
@@ -24,7 +24,7 @@ slider.oninput = function () {
   }%, rgb(14, 14, 22) ${(this.value / this.max) * 100}%)`;
 };
 
-function test(focus) {
+function generatorPollHandler(focus) {
   if (focus.target.checked == true) {
     difficultySquares[0].className = "level";
     levelIndicators.unshift(difficultySquares[0]);
@@ -75,9 +75,6 @@ function generateHandler() {
       generatorBag[Math.round(Math.random() * (generatorBag.length - 1))];
     i++;
   }
-  //slider.value >= 17
-   // ? (generatedPassword.style.fontSize = "calc()")
-    //: (generatedPassword.style.fontSize = "1.2em");
 
   generatedPassword.textContent = password;
   generatedPassword.style.color = "white";
@@ -96,7 +93,7 @@ function copyHandler() {
 }
 
 optionInput.forEach((element) =>
-  element.addEventListener("click", test.bind())
+  element.addEventListener("click", generatorPollHandler.bind())
 );
 generator.addEventListener("click", generateHandler.bind());
 copyPassword.addEventListener("click", copyHandler.bind());
