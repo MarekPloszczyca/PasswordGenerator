@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PasswordGenerator</title>
+    <link rel="stylesheet" href="PasswordGenerator.css" />
+    <script src="PasswordGenerator.js" defer></script>
+  </head>
+  <body>
+    <div class="container">
+      <h4>Password Generator</h4>
+      <div class="copyboard">
+        <p class="password">P4$sW0RD!</p>
+        <p class="icon" title="Copy">&#9988;</p>
+      </div>
+      <div class="generator">
+        <div class="length">
+          <p>Character Length</p>
+          <span class="number"></span>
+        </div>
+        <input type="range" min="0" max="20" value="0" />
+        <form>
+          <input type="checkbox" name="option1" id="option1" value="uppercase" />
+          <label for="option1">Include Uppercase Letters</label><br><br>
+          <input type="checkbox" name="option2" id="option2" value="lowercase"/>
+          <label for="option2">Include Lowercase Letters</label></br><br>
+          <input type="checkbox" name="option3" id="option3" value="numbers"/>
+          <label for="option3">Include Numbers</label><br><br>
+          <input type="checkbox" name="option4" id="option4" value="symbols"/>
+          <label for="option4">Include Symbols</label>
+        </form>
+        <div class="indicator">
+          <p>STRENGTH</p>
+          <div class="difficulty"></div>
+          <div class="difficulty"></div>
+          <div class="difficulty"></div>
+          <div class="difficulty"></div>
+        </div>
+        <div class="confirmation">
+          <b>GENERATE</b>        
+      </div>
+      </div>
+     </div>
+  </body>
+</html>
